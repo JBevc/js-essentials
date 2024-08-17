@@ -111,19 +111,43 @@
 // 97-100 => S
 
 // 8 - Funcion
-function fillCart(person, articlesCollection) {
-  person.cart = [...articlesCollection];
-}
+// function fillCart(person, articlesCollection) {
+//   person.cart = [...articlesCollection];
+// }
 
-const cartArticlesCollection = [{ article: "👟", amount: 1, price: 25 }];
-const person = { name: "Pepe", cart: [] };
-fillCart(person, cartArticlesCollection);
-console.log(person.cart);
+// const cartArticlesCollection = [{ article: "👟", amount: 1, price: 25 }];
+// const person = { name: "Pepe", cart: [] };
+// fillCart(person, cartArticlesCollection);
+// console.log(person.cart);
 // it should modify person's cart in order to add the the new collection of articles
 
 // 9 - Funcion
-// countBanana(inventory:['🥑','🍌','🥭', '🍌']})
+// function countBanana(inventory) {
+//   let contadorBanana = 0;
+//   for (const currentvalue of inventory) {
+//     if (currentvalue === "🍌") {
+//       contadorBanana++;
+//     }
+//   }
+//   console.log(`Hay ${contadorBanana} bananas`);
+// }
+// const inventory = ["🥑", "🍌", "🥭", "🍌"];
+// countBanana(inventory);
 
 // 10 - Function
-// getTotal(inventory: [{article: '🍔', price: 15, quantity: '1'}, {article: '🍟', price: 10, quantity: '2'}])
+function getTotal(
+  inventory = [
+    { article: "🍔", price: 15, quantity: "1" },
+    { article: "🍟", price: 10, quantity: "2" },
+  ]
+) {
+  let suma = 0;
+  for (const product in inventory) {
+    priceOfProd = inventory[product].price;
+    quantity = inventory[product].quantity;
+    suma += priceOfProd * quantity;
+  }
+  console.log(suma);
+}
+getTotal();
 // it should return the total. for the example data 👆 it should be: 35. (15x1 + 10x2)
